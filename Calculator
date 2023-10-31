@@ -1,0 +1,22 @@
+def Calculator():
+  num1 = int(input(' insert your first number: '))
+  operator = input('insert your operator: ')
+  num2 = int(input('insert your second number: '))
+  
+  if operator == '+' :
+    print(num1 + num2)
+  elif operator == '-' :
+    print(num1 - num2)
+  elif operator == '*':
+    print(num1 * num2)
+  elif operator == '/' :
+    print( num1 / num2)
+  elif operator =='%' :
+    print(num1 % num2)
+  elif operator == '**' :
+    print(num1 ** num2)
+  elif operator == '//' :
+    print(num1 // num2)
+  else: print ('enter a write operator')
+
+Calculator()

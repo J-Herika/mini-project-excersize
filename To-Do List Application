@@ -1,0 +1,44 @@
+task = []
+
+def add_task():
+  new_task = input('Enter a new task to your list!: ')
+  task.append(new_task)
+  print('Task has been added!')
+  
+  
+
+def remove_task():
+  task_num = int(input('Which task would u like to remove?: '))
+  task.pop(task_num)
+  print('Task has been removed.')
+
+
+
+def view_task():
+  while True:
+    print("\nTo-Do List Menu:")
+    print("1. Add Task")
+    print("2. Mark Task as Completed")
+    print("3. Remove Task")
+    print("4. Exit")
+    print('5. view list')
+    
+    choice = input("Enter your choice: ")
+
+    if choice == "1":
+        add_task()
+    elif choice == "2":
+        mark_task()
+    elif choice == "3":
+        print(task)
+        remove_task()
+    elif choice == "4":
+        print("Exiting the To-Do List Application. Goodbye!")
+        break
+    else:
+        print("Invalid choice. Please try again.")
+
+
+view_task()
+      
+  

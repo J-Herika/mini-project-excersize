@@ -1,0 +1,18 @@
+# 5. Palindrome Checker:
+# • Hints:
+# 1. Use string manipulation to remove spaces and convert the input to lowercase.
+# 2. Compare the input string with its reverse to check if it reads the same backward as forward.
+
+import re
+
+input_string = input('Enter a string: ')
+
+processed_string = re.sub(r'[^a-zA-Z]', '', input_string).lower()
+# Remove non-alphanumeric characters and spaces using regular expressions
+print('Your word is: ', processed_string)
+reverse_string = processed_string[::-1]
+
+if processed_string == reverse_string:
+  print(f'Correct! it is a Palindrome. original order: {processed_string}. Reversed order: {reverse_string}' )
+else:
+  print(f'it is not a Palindrome. original order: {processed_string}. Reversed order: {reverse_string}' )

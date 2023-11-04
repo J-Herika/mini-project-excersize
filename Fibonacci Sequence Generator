@@ -1,0 +1,17 @@
+# 6. Fibonacci Sequence Generator:
+# • Hints:
+#     1. Initialize two variables with the first two numbers of the Fibonacci sequence (0 and 1).
+#     2. Use a loop to generate the next number in the sequence by adding the last two numbers.
+#     3. Store the generated numbers in a list and print the list.
+
+first_num = 0
+second_num = 1
+
+Fibonacci_Sequence = []
+
+while first_num < 100:
+  Fibonacci_Sequence.append(first_num)
+  new_num = first_num + second_num  # Calculate the next Fibonacci number
+  first_num = second_num  # Update first_num with the old value of second_num
+  second_num = new_num  # Update second_num with the newly calculated number
+  print(Fibonacci_Sequence)

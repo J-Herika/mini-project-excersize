@@ -1,0 +1,30 @@
+# 7. Simple Alarm Clock:
+# • Hints:
+#     1. Use the time module to get the current time and set the alarm time.
+#     2. Implement a loop that continuously checks the current time against the alarm time.
+#     3. Use a sound library like winsound (Windows) or os.system('say "Wake up!"') (Mac) to play an alarm sound.
+
+
+import time
+import winsound
+
+
+alarm_hour = int(input("Enter the alarm hour (0-23): "))
+alarm_minute = int(input("Enter the alarm minute (0-59): "))
+
+# Main loop
+while True:
+    # Get the current time in UAE timezone (UTC+4)
+    current_time = time.gmtime()
+    uae_hour = (current_time.tm_hour + 4) % 24
+    uae_minute = current_time.tm_min
+
+    
+    if uae_hour == alarm_hour and uae_minute == alarm_minute:
+        print("Wake up!")
+        
+        winsound.PlaySound('alarm.wav', winsound.SND_FILENAME)
+        break 
+    else:
+        
+        time.sleep(60)  

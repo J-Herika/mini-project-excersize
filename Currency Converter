@@ -1,0 +1,29 @@
+# 8. Currency Converter:
+# • Hints:
+#     1. Store the exchange rates for different currencies in a dictionary.
+#     2. Take user input for the amount, source currency, and target currency.
+#     3. Use the input values to calculate and display the converted amount.
+
+exchange_rates = {
+    'USD': 1.0,  # Base currency (US Dollar)
+    'EUR': 0.93,  # Euro
+    'GBP': 0.81,  # British Pound
+    'JPY': 149.58, # Japanese Yen
+    'AED': 3.67, # united emirates Dirham
+
+}
+
+
+amount = float(input("Enter amount: "))
+source_currency = input("Enter source currency (USD, EUR, GBP, JPY,AED, etc.): ").upper()
+target_currency = input("Enter target currency (USD, EUR, GBP, JPY,AED, etc.): ").upper()
+
+# Convert the amount
+if source_currency in exchange_rates and target_currency in exchange_rates:
+    exchange_rate = exchange_rates[target_currency] / exchange_rates[source_currency]
+    converted_amount = amount * exchange_rate
+    print(f"{amount} {source_currency} is equal to {converted_amount} {target_currency}")
+else:
+    print("Invalid currency input.")
+
+

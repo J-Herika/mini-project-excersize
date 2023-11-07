@@ -1,0 +1,22 @@
+# 9. Temperature Converter:
+# • Hints:
+#     1. Take user input for the temperature value and the input temperature unit (Celsius or Fahrenheit).
+#     2. Use if statements to convert the temperature from one unit to another.
+#     3. Print the converted temperature.
+
+while True:
+  temperature_value = input('Insert the temperature value: ')
+  try:
+      temperature_value = float(temperature_value)
+      break
+  except ValueError:
+      print("Invalid input. Please enter a number.")
+
+temperature_unit = input('Which unit would you like to convert to?: ').lower()
+
+if temperature_unit == 'celsius':
+  temp_celsius = (temperature_value - 32) / 9 * 5
+  print(f'{temperature_value} Fahrenheit. Will equal {temp_celsius}C in Celsius.')
+elif temperature_unit == 'fahrenheit':
+  temp_fahrenheit = (temperature_value * 1.8) + 32
+  print(f'{temperature_value} Celsius. Will equal {temp_fahrenheit}F in Fahrenheit.')

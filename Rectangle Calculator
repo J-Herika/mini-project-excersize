@@ -1,0 +1,16 @@
+# Mini Project: Write a program that calculates the area of a rectangle.
+
+# Step 1: User inputs the length and the width of the rectangle.
+def rec_calculator():
+    length_rec = int(input('Insert the length of your rectangle: L'))
+    
+    width_rec = int(input('Insert the width of your rectangle: W'))
+
+    # Step 2: Write a function that calculates the area by multiplying the length and width.
+    area_rec = length_rec * width_rec
+
+    # Step 3: Return the information to the user.
+    print(area_rec)
+
+# Call the function without any arguments.
+rec_calculator()

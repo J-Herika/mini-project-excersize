@@ -1,0 +1,26 @@
+# Count the frequency of words in a given text.
+
+def word_fr_counter():
+    
+    
+#1 let the user give input of a text.
+    print('type your text below:')
+    text = input().lower()
+
+#2 ask the user what word the what to count the frequency of.
+    print('which word would you like to count the frequency of?')
+    global word
+    word = input().lower()
+
+#3 calculate the the number of times the word is repeated.
+    word_list = text.split()
+    num_of_times = word_list.count(word)
+
+    return num_of_times
+
+
+#retrun to them the ammount.
+
+result = word_fr_counter()
+
+print(f'The frequency of {word} in your text is {result}')

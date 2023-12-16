@@ -1,0 +1,35 @@
+class BankAccount:
+    def __init__(self, balance, dp_amount, wd_amount):
+        # Initializes a BankAccount object with a balance, deposit amount, and withdrawal amount.
+        self.balance = balance  # Set the initial balance
+        self.dp_amount = dp_amount  # Set the initial deposit amount
+        self.wd_amount = wd_amount  # Set the initial withdrawal amount
+
+    def main(self):
+        # Prompts the user to deposit, withdraw, or check their balance, and performs the corresponding action.
+        while True:
+            print('Hello, what would you like to do?\nDeposit, Withdraw, or Check Balance')
+            ans = input('').lower()
+
+            if ans in ('deposit', 'withdraw', 'check balance'):
+                if ans == 'deposit':
+                    print('How much would you like to deposit?')
+                    self.dp_amount = int(input('Amount: $'))
+                    self.balance += self.dp_amount  # Add the deposit amount to the balance
+                    return print(f'Your account balance is ${self.balance}')
+
+                elif ans == 'withdraw':
+                    print(f'You have {self.balance}. How much would you like to withdraw?')
+                    self.balance -= int(input('Amount: $'))  # Subtract the withdrawal amount from the balance
+                    return print(f'Your balance after withdrawal is: ${self.balance}')
+
+                elif ans == 'check balance':
+                    print(f'Your balance is: ${self.balance}')
+                    return self.balance
+
+            else:
+                print('Please choose a valid answer')
+
+
+account = BankAccount(100000, 0, 0)  # Create a BankAccount object with an initial balance of $100,000
+print(account.main())  # Call the main method to interact with the account

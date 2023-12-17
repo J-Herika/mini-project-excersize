@@ -1,0 +1,35 @@
+import os
+import csv
+
+students = []
+
+if not os.path.exists('students.csv'):
+    with open('students.csv', 'w', newline='') as f:
+        csv_writer = csv.writer(f)
+        csv_writer.writerow(['Name', 'Age', 'Grade'])  # Writing headers if the file is newly created
+        print('Your file has been created')
+else:
+    print('The file you\'re trying to create already exists')
+
+# Reading existing data (if any)
+with open('students.csv', 'r') as f:
+    file = csv.reader(f)
+    for row in file:
+        students.append(row)
+
+# Get input from the user for a new student
+new_student = []
+for info in ['Name', 'Age', 'Grade']:
+    value = input(f"Enter {info}: ")
+    new_student.append(value)
+
+students.append(new_student)  # Adding new student data to the list
+
+# Writing updated data back to the file
+with open('students.csv', 'w', newline='') as f:
+    csv_writer = csv.writer(f)
+    csv_writer.writerows(students)
+
+# Displaying the contents of the file
+with open('students.csv', 'r') as f:
+    print(f.read())
